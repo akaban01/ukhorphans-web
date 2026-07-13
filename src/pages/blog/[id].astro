@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.excerpt}>
+  <section class="relative overflow-hidden bg-ink-900 py-20 sm:py-28">
+    <div class="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true">
+      <div class="absolute -left-24 -top-24 size-96 rounded-full bg-gold-400 blur-3xl"></div>
+    </div>
+    <div class="container-page relative max-w-3xl">
+      <a href="/blog" class="inline-flex items-center gap-1 text-sm font-semibold text-gold-300 hover:text-gold-200">
+        &larr; Back to Blog
+      </a>
+      <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-gold-300">
+        {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+        &middot; {post.data.author}
+      </p>
+      <h1 class="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">{post.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20">
+    <div class="container-page max-w-3xl">
+      <div class="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink-900 prose-p:text-ink-600 prose-p:leading-relaxed">
+        <Content />
+      </div>
+      <a href="/donate" class="mt-10 inline-flex items-center gap-2 rounded-full bg-gold-400 px-6 py-3 font-semibold text-ink-900 hover:bg-gold-300 transition-colors">
+        Support This Work <Icon name="arrow" class="size-4" />
+      </a>
+    </div>
+  </section>
+</Layout>

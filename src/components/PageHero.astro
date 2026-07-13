@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-ink-900 py-20 sm:py-28">
+  <div class="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true">
+    <div class="absolute -left-24 -top-24 size-96 rounded-full bg-gold-400 blur-3xl"></div>
+    <div class="absolute -right-24 bottom-0 size-96 rounded-full bg-gold-500 blur-3xl"></div>
+  </div>
+  <div class="container-page relative text-center">
+    <p class="font-display italic text-gold-300">Building Hope</p>
+    <h1 class="mt-2 font-display text-4xl font-semibold text-white sm:text-5xl">{title}</h1>
+    {subtitle && <p class="mx-auto mt-4 max-w-2xl text-ink-200">{subtitle}</p>}
+  </div>
+</section>

@@ -1,0 +1,87 @@
+---
+import { getEntry } from 'astro:content';
+import Icon from './Icon.astro';
+
+const settings = await getEntry('settings', 'main');
+const s = settings!.data;
+
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/about-us', label: 'About Us' },
+  { href: '/missions', label: 'Missions' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const socials = [
+  { key: 'facebook', label: 'Facebook' },
+  { key: 'twitter', label: 'Twitter' },
+  { key: 'youtube', label: 'YouTube' },
+  { key: 'instagram', label: 'Instagram' },
+] as const;
+---
+
+<footer class="bg-ink-900 text-ink-200">
+  <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="/" class="flex items-center gap-3">
+        <span class="flex size-11 items-center justify-center rounded-full bg-gold-400 text-ink-900">
+          <Icon name="heart" class="size-6" />
+        </span>
+        <span class="font-display leading-tight">
+          <span class="block text-base font-semibold text-white">Ummul Khairy</span>
+          <span class="block text-xs uppercase tracking-[0.2em] text-gold-300">House of Orphans</span>
+        </span>
+      </a>
+      <p class="mt-4 text-sm text-ink-200/80 leading-relaxed">{s.tagline}</p>
+      <div class="mt-5 flex gap-3">
+        {socials.map(({ key, label }) => s[key] && (
+          <a
+            href={s[key]}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            class="flex size-9 items-center justify-center rounded-full bg-ink-600/50 text-ink-100 hover:bg-gold-400 hover:text-ink-900 transition-colors"
+          >
+            <Icon name="heart" class="size-4" />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-display text-lg font-semibold text-white">Quick Links</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {nav.map((item) => (
+          <li><a href={item.href} class="hover:text-gold-300 transition-colors">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-display text-lg font-semibold text-white">Our Causes</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li class="flex items-center gap-2"><Icon name="home" class="size-4 text-gold-300" /> Provide Shelter</li>
+        <li class="flex items-center gap-2"><Icon name="food" class="size-4 text-gold-300" /> Food &amp; Water</li>
+        <li class="flex items-center gap-2"><Icon name="shirt" class="size-4 text-gold-300" /> Clothing</li>
+        <li class="flex items-center gap-2"><Icon name="book" class="size-4 text-gold-300" /> Free Education</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-display text-lg font-semibold text-white">Contact</h3>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li class="flex items-start gap-2"><Icon name="pin" class="size-4 shrink-0 mt-0.5 text-gold-300" /> {s.address}</li>
+        <li class="flex items-center gap-2"><Icon name="phone" class="size-4 text-gold-300" /> {s.phone}</li>
+        <li class="flex items-center gap-2"><Icon name="mail" class="size-4 text-gold-300" /> {s.email}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-ink-600/40">
+    <div class="container-page flex flex-col sm:flex-row items-center justify-between gap-2 py-5 text-xs text-ink-200/70">
+      <p>&copy; {new Date().getFullYear()} Ummul Khairy House of Orphans. All rights reserved.</p>
+      <p>Built with care to bring hope to children in Kaolack, Senegal.</p>
+    </div>
+  </div>
+</footer>

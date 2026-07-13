@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog" description="News and updates from Ummul Khairy House of Orphans.">
+  <PageHero title="Our Blog" subtitle="Stories and updates from the ground in Kaolack, Senegal." />
+
+  <section class="py-20 sm:py-28">
+    <div class="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <a href={`/blog/${post.id}`} class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-ink-900/5 hover:shadow-lg transition-shadow">
+          {post.data.image ? (
+            <img src={post.data.image} alt={post.data.title} class="h-40 w-full object-cover" />
+          ) : (
+            <div class="flex h-40 w-full items-center justify-center bg-gold-50">
+              <Icon name="heart" class="size-10 text-gold-400" />
+            </div>
+          )}
+          <div class="flex flex-1 flex-col p-6">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gold-600">
+              {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+            </p>
+            <h2 class="mt-3 font-display text-xl font-semibold text-ink-900 group-hover:text-gold-600 transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="mt-3 text-sm text-ink-400 leading-relaxed line-clamp-3">{post.data.excerpt}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold-600">
+              Read More <Icon name="arrow" class="size-3.5" />
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

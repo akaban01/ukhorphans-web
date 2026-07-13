@@ -1,0 +1,89 @@
+backend:
+  name: github
+  repo: akaban01/ukhorphans-web
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Uses Netlify's built-in OAuth proxy for GitHub (no Netlify Identity needed).
+# Editors must be collaborators on the akaban01/ukhorphans-web GitHub repo.
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://ukhorphans.org
+display_url: https://ukhorphans.org
+logo_url: /favicon.svg
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/content/settings/general.yml"
+        fields:
+          - label: "General"
+            name: "main"
+            widget: "object"
+            fields:
+              - { label: "Site Title", name: "siteTitle", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Mailing Address", name: "address", widget: "string" }
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Twitter / X URL", name: "twitter", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "Donate Button Link", name: "donateUrl", widget: "string", default: "/donate" }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "Ummul Khairy Team" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "missions"
+    label: "Missions"
+    folder: "src/content/missions"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Icon"
+        name: "icon"
+        widget: "select"
+        options: ["home", "food", "book", "shirt", "heart", "users"]
+        default: "home"
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Order", name: "order", widget: "number", default: 0 }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "team"
+    label: "Team Members"
+    folder: "src/content/team"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Order", name: "order", widget: "number", default: 0 }
+      - { label: "Bio", name: "body", widget: "markdown" }

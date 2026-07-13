@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Icon from '../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+
+const teamRaw = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+const team = await Promise.all(
+  teamRaw.map(async (member) => ({ member, Content: (await render(member)).Content }))
+);
+---
+
+<Layout title="About Us" description="Learn about Ummul Khairy House of Orphans and our mission to build an orphanage in Kaolack, Senegal.">
+  <PageHero title="About Our Organization" subtitle="Journey to help — this is the best organization I have volunteered for in my life." />
+
+  <section class="py-20 sm:py-28">
+    <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <SectionHeading eyebrow="Who We Are" title="Ummul Khairy House of Orphans" align="left" />
+        <p class="mt-6 text-ink-600 leading-relaxed">
+          Ummul Khairy House of Orphans is a charitable organization building an orphanage in Kaolack,
+          Senegal. Our mission is centered on three strategic priorities: providing shelter, feeding, and
+          educating vulnerable orphans so every child has the chance to grow up safe, healthy, and hopeful.
+        </p>
+        <p class="mt-4 text-ink-600 leading-relaxed">
+          We believe that a warm and caring environment, combined with consistent access to food, healthcare,
+          and schooling, gives children the strongest possible foundation for the rest of their lives. Every
+          program we run, and every dollar we raise, is guided by that belief.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        {['home', 'food', 'book', 'heart'].map((icon) => (
+          <div class="aspect-square rounded-2xl bg-gold-50 flex items-center justify-center">
+            <Icon name={icon} class="size-14 text-gold-500" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-ink-900 py-20 sm:py-28">
+    <div class="container-page">
+      <SectionHeading eyebrow="Strategic Priorities" title="Shelter. Feed. Educate." light />
+      <p class="mx-auto mt-6 max-w-2xl text-center text-ink-200 leading-relaxed">
+        Every day we bring hope to children around the world. In Kaolack, that means comfortable living
+        spaces, nutritious meals, clean water, and free education — the essentials every child needs to
+        thrive.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-28">
+    <div class="container-page">
+      <SectionHeading eyebrow="Meet Our Team" title="Leaders dedicated to the well-being of children" />
+      <p class="mx-auto mt-4 max-w-2xl text-center text-ink-400">
+        With the help of our dedicated team of caregivers, these orphans receive the attention and care they
+        deserve. We believe in fostering a nurturing environment that allows them to grow, heal, and thrive.
+      </p>
+      <div class="mt-12 grid gap-8 sm:grid-cols-3">
+        {team.map(({ member, Content }) => (
+          <div class="rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-ink-900/5">
+            {member.data.photo ? (
+              <img src={member.data.photo} alt={member.data.name} class="mx-auto size-20 rounded-full object-cover" />
+            ) : (
+              <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-gold-400/15">
+                <Icon name="users" class="size-9 text-gold-500" />
+              </div>
+            )}
+            <h3 class="mt-4 font-display text-lg font-semibold text-ink-900">{member.data.name}</h3>
+            <p class="text-sm text-gold-600">{member.data.role}</p>
+            <div class="prose-sm mt-3 text-sm text-ink-400 leading-relaxed [&_p]:m-0">
+              <Content />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-full bg-gold-400 px-6 py-3 font-semibold text-ink-900 hover:bg-gold-300 transition-colors">
+          Become a Volunteer <Icon name="arrow" class="size-4" />
+        </a>
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-full border border-ink-900/15 px-6 py-3 font-semibold text-ink-900 hover:bg-ink-50 transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
