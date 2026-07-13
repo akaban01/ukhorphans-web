@@ -1,12 +1,10 @@
 backend:
-  name: github
-  repo: akaban01/ukhorphans-web
+  name: git-gateway
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
-# Uses Netlify's built-in OAuth proxy for GitHub (no Netlify Identity needed).
-# Editors must be collaborators on the akaban01/ukhorphans-web GitHub repo.
+# Netlify Identity + Git Gateway. In Netlify: Identity is enabled; also enable
+# Git Gateway under Project configuration > Identity > Services, then invite
+# yourself as an Identity user to log into /admin.
 
 local_backend: true
 
