@@ -8,7 +8,7 @@ const blog = defineCollection({
     date: z.date(),
     excerpt: z.string(),
     image: z.string().optional(),
-    author: z.string().default('Ummul Khairy Team'),
+    author: z.string().default('Ummul Khairi Team'),
   }),
 });
 

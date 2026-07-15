@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="Blog" description="News and updates from Ummul Khairy House of Orphans.">
+<Layout title="Blog" description="News and updates from Ummul Khairi House of Orphans.">
   <PageHero title="Our Blog" subtitle="Stories and updates from the ground in Kaolack, Senegal." />
 
   <section class="py-20 sm:py-28">

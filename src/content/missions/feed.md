@@ -2,6 +2,7 @@
 title: "Feed"
 date: 2023-08-20
 icon: "food"
+image: "/images/caregiver-with-toddlers.jpg"
 order: 2
 ---
 

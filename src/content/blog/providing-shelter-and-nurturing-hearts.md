@@ -2,7 +2,8 @@
 title: "Providing Shelter and Nurturing Hearts"
 date: 2023-08-19
 excerpt: "Every child deserves a bright future filled with love, care, and opportunity. Here's how our new home in Kaolack is taking shape."
-author: "Ummul Khairy Team"
+image: "/images/groundbreaking-ceremony.jpg"
+author: "Ummul Khairi Team"
 ---
 
 Every child deserves a bright future filled with love, care, and opportunity. We are building an orphanage in the vibrant city of Kaolack, Senegal, to provide shelter, food, and education to the most vulnerable among us — the orphans.
