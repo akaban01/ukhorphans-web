@@ -1,4 +1,4 @@
-# Ummul Khairy House of Orphans — Website
+# Ummul Khairi House of Orphans — Website
 
 Redesigned site for ukhorphans.org, built with [Astro](https://astro.build), [Tailwind CSS v4](https://tailwindcss.com), and [Decap CMS](https://decapcms.org).
 
