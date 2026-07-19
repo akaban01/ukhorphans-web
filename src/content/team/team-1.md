@@ -1,7 +1,7 @@
 ---
-name: "Amina Diallo"
-role: "Lead Caregiver"
+name: "Rokhiyatou Niass"
+role: "CEO / Founder"
 order: 1
 ---
 
-Amina oversees daily care for every child at the house, from morning routines to bedtime stories, making sure each child feels seen and safe.
+Rokhiyatou founded the organization and leads its mission, guiding the vision and strategy to ensure every child in our care is seen and safe.

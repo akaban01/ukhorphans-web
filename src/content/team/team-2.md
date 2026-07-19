@@ -1,7 +1,7 @@
 ---
-name: "Ibrahim Ndiaye"
-role: "Program Coordinator"
+name: "Ben Abubakar Niass"
+role: "Vice President"
 order: 2
 ---
 
-Ibrahim manages education programs and community partnerships, working with local schools to keep every child enrolled and supported.
+Ben supports the organization's leadership and operations, working closely with the team to advance our mission and programs.

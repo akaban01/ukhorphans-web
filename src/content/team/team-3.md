@@ -1,7 +1,7 @@
 ---
-name: "Fatou Sarr"
-role: "Volunteer Manager"
+name: "Samba Ba"
+role: "Director of Development & Donor Relations"
 order: 3
 ---
 
-Fatou recruits and trains volunteers, connecting willing hands and hearts from the local community with the children who need them most.
+Samba leads fundraising and donor relations, building lasting partnerships that provide the resources our children need to thrive.

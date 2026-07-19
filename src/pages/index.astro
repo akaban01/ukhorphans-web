@@ -49,8 +49,8 @@ const stats = [
 
       <div class="relative">
         <div class="aspect-4/3 rounded-3xl bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 p-1.5 shadow-2xl">
-          <div class="flex h-full w-full items-center justify-center rounded-[1.3rem] bg-ink-800/80">
-            <Icon name="home" class="size-24 text-gold-100" />
+          <div class="flex h-full w-full items-center justify-center rounded-[1.3rem] bg-white p-8">
+            <img src="/images/logo.jpeg" alt="Ummul Khairi House of Orphans" class="h-full w-full object-contain" />
           </div>
         </div>
         <div class="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 rounded-2xl bg-white px-6 py-4 shadow-xl">
@@ -156,10 +156,8 @@ const stats = [
           Make Donation <Icon name="arrow" class="size-4" />
         </a>
       </div>
-      <div class="aspect-video rounded-3xl bg-ink-900 flex items-center justify-center">
-        <button aria-label="Watch video" class="flex size-20 items-center justify-center rounded-full bg-gold-400 text-ink-900 hover:bg-gold-300 transition-colors">
-          <Icon name="play" class="size-8" />
-        </button>
+      <div class="aspect-video overflow-hidden rounded-3xl bg-ink-900">
+        <video src="/videos/hero-video.mp4" controls class="h-full w-full object-cover"></video>
       </div>
     </div>
   </section>
