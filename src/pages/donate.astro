@@ -10,7 +10,7 @@ const s = settings!.data;
 const amounts = ['25', '50', '100', '250'];
 ---
 
-<Layout title="Donate" description="Support Ummul Khairy House of Orphans with a one-time or monthly gift.">
+<Layout title="Donate" description="Support Ummul Khairi House of Orphans with a one-time or monthly gift.">
   <PageHero title="Make a Donation" subtitle="Every gift helps us provide shelter, food, and education to a child in Kaolack, Senegal." />
 
   <section class="py-20 sm:py-28">
@@ -42,14 +42,15 @@ const amounts = ['25', '50', '100', '250'];
         </div>
 
         <a
-          href={`mailto:${s.email}?subject=${encodeURIComponent('Donation Inquiry')}`}
+          href={s.donateUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           class="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-gold-400 px-6 py-3.5 font-semibold text-ink-900 hover:bg-gold-300 transition-colors"
         >
           Continue to Donate <Icon name="arrow" class="size-4" />
         </a>
         <p class="mt-3 text-center text-xs text-ink-400">
-          Secure checkout is not yet connected — this button currently reaches our team directly by email so
-          we can process your gift. Contact us to set up a payment processor (e.g. Stripe or PayPal).
+          You'll be taken to our secure PayPal Giving Fund page to complete your donation.
         </p>
       </div>
 

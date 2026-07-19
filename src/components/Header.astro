@@ -36,7 +36,7 @@ const current = Astro.url.pathname;
         <Icon name="heart" class="size-6" />
       </span>
       <span class="font-display leading-tight">
-        <span class="block text-xl font-semibold text-white tracking-wide">Ummul Khairy</span>
+        <span class="block text-xl font-semibold text-white tracking-wide">Ummul Khairi</span>
         <span class="block text-sm uppercase tracking-[0.2em] text-gold-300">House of Orphans</span>
       </span>
     </a>
@@ -59,6 +59,8 @@ const current = Astro.url.pathname;
 
     <a
       href={s.donateUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       class="hidden lg:inline-flex items-center gap-2 rounded-full bg-gold-400 px-5 py-2.5 font-semibold text-ink-900 hover:bg-gold-300 transition-colors"
     >
       Donate Now
@@ -75,7 +77,7 @@ const current = Astro.url.pathname;
             {item.label}
           </a>
         ))}
-        <a href={s.donateUrl} class="mt-1 rounded-lg bg-gold-400 px-3 py-2 text-center font-semibold text-ink-900 hover:bg-gold-300 transition-colors">
+        <a href={s.donateUrl} target="_blank" rel="noopener noreferrer" class="mt-1 rounded-lg bg-gold-400 px-3 py-2 text-center font-semibold text-ink-900 hover:bg-gold-300 transition-colors">
           Donate Now
         </a>
       </div>
