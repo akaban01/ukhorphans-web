@@ -2,7 +2,7 @@
 title: "Unlocking a Bright Future"
 date: 2023-08-20
 excerpt: "Education is the key to a brighter future — here's how we're building a free education program for the children in our care."
-image: "/images/dedicated-record-keeping.jpg"
+image: "/images/dedicated-record-keeping.webp"
 author: "Ummul Khairi Team"
 ---
 

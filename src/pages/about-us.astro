@@ -31,10 +31,10 @@ const team = await Promise.all(
       </div>
       <div class="grid grid-cols-2 gap-4">
         {[
-          { src: '/images/groundbreaking-group.jpg', alt: 'Community leaders and family at the groundbreaking ceremony', size: 700 },
-          { src: '/images/foundation-ceremony.jpg', alt: 'Laying the foundation stone for the new orphanage', size: 700 },
-          { src: '/images/nursery-room.jpg', alt: 'A nursery room set up with cribs and toys for the youngest children', size: 700 },
-          { src: '/images/playroom-bonding.jpg', alt: 'A caregiver bonding with children in the playroom', size: 700 },
+          { src: '/images/groundbreaking-group.webp', alt: 'Community leaders and family at the groundbreaking ceremony', size: 700 },
+          { src: '/images/foundation-ceremony.webp', alt: 'Laying the foundation stone for the new orphanage', size: 700 },
+          { src: '/images/nursery-room.webp', alt: 'A nursery room set up with cribs and toys for the youngest children', size: 700 },
+          { src: '/images/playroom-bonding.webp', alt: 'A caregiver bonding with children in the playroom', size: 700 },
         ].map((img, i) => (
           <img
             src={img.src}
@@ -60,9 +60,9 @@ const team = await Promise.all(
       </p>
       <div class="mt-10 grid gap-4 sm:grid-cols-3">
         {[
-          { src: '/images/clinic-visit.jpg', alt: 'A caregiver greeting a health worker during a clinic visit' },
-          { src: '/images/health-checkup-visit.jpg', alt: 'A health checkup visit for the children in our care' },
-          { src: '/images/caregiver-with-community.jpg', alt: 'A caregiver surrounded by children in the community' },
+          { src: '/images/clinic-visit.webp', alt: 'A caregiver greeting a health worker during a clinic visit' },
+          { src: '/images/health-checkup-visit.webp', alt: 'A health checkup visit for the children in our care' },
+          { src: '/images/caregiver-with-community.webp', alt: 'A caregiver surrounded by children in the community' },
         ].map((img) => (
           <img src={img.src} alt={img.alt} width="600" height="600" loading="lazy" decoding="async" class="aspect-4/3 rounded-2xl object-cover" />
         ))}
