@@ -2,7 +2,7 @@
 title: "Shelter"
 date: 2023-08-19
 icon: "home"
-image: "/images/site-exterior.jpg"
+image: "/images/site-exterior.webp"
 order: 1
 ---
 

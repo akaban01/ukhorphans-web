@@ -2,7 +2,7 @@
 title: "Providing Shelter and Nurturing Hearts"
 date: 2023-08-19
 excerpt: "Every child deserves a bright future filled with love, care, and opportunity. Here's how our new home in Kaolack is taking shape."
-image: "/images/groundbreaking-ceremony.jpg"
+image: "/images/groundbreaking-ceremony.webp"
 author: "Ummul Khairi Team"
 ---
 

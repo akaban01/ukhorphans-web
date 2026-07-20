@@ -2,7 +2,7 @@
 title: "Educate"
 date: 2023-08-21
 icon: "book"
-image: "/images/playroom-mural.jpg"
+image: "/images/playroom-mural.webp"
 order: 3
 ---
 
