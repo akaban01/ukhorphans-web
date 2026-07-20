@@ -18,7 +18,7 @@ const missions = await Promise.all(
       {missions.map(({ mission, Content }) => (
         <div class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-ink-900/5">
           {mission.data.image && (
-            <img src={mission.data.image} alt={mission.data.title} class="h-40 w-full object-cover" />
+            <img src={mission.data.image} alt={mission.data.title} loading="lazy" decoding="async" class="h-40 w-full object-cover" />
           )}
           <div class="p-8">
           <div class="flex size-14 items-center justify-center rounded-2xl bg-gold-400/15 text-gold-500">
@@ -50,7 +50,15 @@ const missions = await Promise.all(
           Support This Work <Icon name="arrow" class="size-4" />
         </a>
       </div>
-      <img src="/images/construction-progress-collage.jpg" alt="Construction progress on the Ummul Khairi House of Orphans" class="aspect-video rounded-3xl object-cover ring-1 ring-white/10" />
+      <img
+        src="/images/construction-progress-collage.jpg"
+        alt="Construction progress on the Ummul Khairi House of Orphans"
+        width="900"
+        height="900"
+        loading="lazy"
+        decoding="async"
+        class="aspect-video rounded-3xl object-cover ring-1 ring-white/10"
+      />
     </div>
   </section>
 </Layout>
