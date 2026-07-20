@@ -50,7 +50,16 @@ const stats = [
       <div class="relative">
         <div class="aspect-4/3 rounded-3xl bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 p-1.5 shadow-2xl">
           <div class="flex h-full w-full items-center justify-center rounded-[1.3rem] bg-white p-8">
-            <img src="/images/logo.jpeg" alt="Ummul Khairi House of Orphans" class="h-full w-full object-contain" />
+            <img
+              src="/images/logo.jpeg"
+              alt="Ummul Khairi House of Orphans"
+              width="700"
+              height="617"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              class="h-full w-full object-contain"
+            />
           </div>
         </div>
         <div class="absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 rounded-2xl bg-white px-6 py-4 shadow-xl">
@@ -78,8 +87,8 @@ const stats = [
     <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
       <div class="order-2 lg:order-1">
         <div class="grid grid-cols-2 gap-4">
-          <img src="/images/groundbreaking-ceremony.jpg" alt="Laying the first brick at the groundbreaking ceremony" class="aspect-square rounded-2xl object-cover" />
-          <img src="/images/caregiver-embracing-children.jpg" alt="A caregiver embracing two children in her care" class="mt-8 aspect-square rounded-2xl object-cover" />
+          <img src="/images/groundbreaking-ceremony.jpg" alt="Laying the first brick at the groundbreaking ceremony" width="859" height="859" loading="lazy" decoding="async" class="aspect-square rounded-2xl object-cover" />
+          <img src="/images/caregiver-embracing-children.jpg" alt="A caregiver embracing two children in her care" width="700" height="700" loading="lazy" decoding="async" class="mt-8 aspect-square rounded-2xl object-cover" />
         </div>
       </div>
       <div class="order-1 lg:order-2">
@@ -115,7 +124,7 @@ const stats = [
         {posts.map((post) => (
           <a href={`/blog/${post.id}`} class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-ink-900/5 hover:shadow-lg transition-shadow">
             {post.data.image ? (
-              <img src={post.data.image} alt={post.data.title} class="h-40 w-full object-cover" />
+              <img src={post.data.image} alt={post.data.title} loading="lazy" decoding="async" class="h-40 w-full object-cover" />
             ) : (
               <div class="flex h-40 w-full items-center justify-center bg-gold-50">
                 <Icon name="heart" class="size-10 text-gold-400" />
@@ -153,7 +162,7 @@ const stats = [
         </a>
       </div>
       <div class="aspect-video overflow-hidden rounded-3xl bg-ink-900">
-        <video src="/videos/hero-video.mp4" controls class="h-full w-full object-cover"></video>
+        <video src="/videos/hero-video.mp4" controls preload="metadata" class="h-full w-full object-cover"></video>
       </div>
     </div>
   </section>
@@ -166,7 +175,7 @@ const stats = [
         {team.map((member) => (
           <div class="rounded-2xl bg-ink-800 p-6 text-center ring-1 ring-white/5">
             {member.data.photo ? (
-              <img src={member.data.photo} alt={member.data.name} class="mx-auto size-20 rounded-full object-cover" />
+              <img src={member.data.photo} alt={member.data.name} loading="lazy" decoding="async" class="mx-auto size-20 rounded-full object-cover" />
             ) : (
               <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-gold-400/20">
                 <Icon name="users" class="size-9 text-gold-300" />

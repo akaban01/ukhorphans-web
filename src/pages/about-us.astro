@@ -31,12 +31,20 @@ const team = await Promise.all(
       </div>
       <div class="grid grid-cols-2 gap-4">
         {[
-          { src: '/images/groundbreaking-group.jpg', alt: 'Community leaders and family at the groundbreaking ceremony' },
-          { src: '/images/foundation-ceremony.jpg', alt: 'Laying the foundation stone for the new orphanage' },
-          { src: '/images/nursery-room.jpg', alt: 'A nursery room set up with cribs and toys for the youngest children' },
-          { src: '/images/playroom-bonding.jpg', alt: 'A caregiver bonding with children in the playroom' },
-        ].map((img) => (
-          <img src={img.src} alt={img.alt} class="aspect-square rounded-2xl object-cover" />
+          { src: '/images/groundbreaking-group.jpg', alt: 'Community leaders and family at the groundbreaking ceremony', size: 700 },
+          { src: '/images/foundation-ceremony.jpg', alt: 'Laying the foundation stone for the new orphanage', size: 700 },
+          { src: '/images/nursery-room.jpg', alt: 'A nursery room set up with cribs and toys for the youngest children', size: 700 },
+          { src: '/images/playroom-bonding.jpg', alt: 'A caregiver bonding with children in the playroom', size: 700 },
+        ].map((img, i) => (
+          <img
+            src={img.src}
+            alt={img.alt}
+            width={img.size}
+            height={img.size}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            class="aspect-square rounded-2xl object-cover"
+          />
         ))}
       </div>
     </div>
@@ -56,7 +64,7 @@ const team = await Promise.all(
           { src: '/images/health-checkup-visit.jpg', alt: 'A health checkup visit for the children in our care' },
           { src: '/images/caregiver-with-community.jpg', alt: 'A caregiver surrounded by children in the community' },
         ].map((img) => (
-          <img src={img.src} alt={img.alt} class="aspect-4/3 rounded-2xl object-cover" />
+          <img src={img.src} alt={img.alt} width="600" height="600" loading="lazy" decoding="async" class="aspect-4/3 rounded-2xl object-cover" />
         ))}
       </div>
     </div>
@@ -73,7 +81,7 @@ const team = await Promise.all(
         {team.map(({ member, Content }) => (
           <div class="rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-ink-900/5">
             {member.data.photo ? (
-              <img src={member.data.photo} alt={member.data.name} class="mx-auto size-20 rounded-full object-cover" />
+              <img src={member.data.photo} alt={member.data.name} loading="lazy" decoding="async" class="mx-auto size-20 rounded-full object-cover" />
             ) : (
               <div class="mx-auto flex size-20 items-center justify-center rounded-full bg-gold-400/15">
                 <Icon name="users" class="size-9 text-gold-500" />
